@@ -9,12 +9,12 @@
 Summary:	The Qt5 Canvas 3D module
 Summary(pl.UTF-8):	Moduł Qt5 Canvas 3D
 Name:		qt5-%{orgname}
-Version:	5.5.1
+Version:	5.8.0
 Release:	1
 License:	LGPL v3 or GPL v2+ or commercial
 Group:		X11/Libraries
-Source0:	http://download.qt.io/official_releases/qt/5.5/%{version}/submodules/%{orgname}-opensource-src-%{version}.tar.xz
-# Source0-md5:	419f0dc472ee033e8272322e251f167e
+Source0:	http://download.qt.io/official_releases/qt/5.8/%{version}/submodules/%{orgname}-opensource-src-%{version}.tar.xz
+# Source0-md5:	94d6e0141711d3660e2872fbb051da5e
 URL:		http://www.qt.io/
 BuildRequires:	Qt5Core-devel >= %{qtbase_ver}
 BuildRequires:	Qt5Gui-devel >= %{qtbase_ver}
@@ -163,7 +163,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{qt5dir}/qml/QtCanvas3D/libqtcanvas3d.so
 %{qt5dir}/qml/QtCanvas3D/plugins.qmltypes
 %{qt5dir}/qml/QtCanvas3D/qmldir
-%{qt5dir}/qml/QtCanvas3D/designer
 
 %files doc
 %defattr(644,root,root,755)

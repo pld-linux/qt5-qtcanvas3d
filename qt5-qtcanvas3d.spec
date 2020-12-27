@@ -9,15 +9,16 @@
 Summary:	The Qt5 Canvas 3D module
 Summary(pl.UTF-8):	Moduł Qt5 Canvas 3D
 Name:		qt5-%{orgname}
-Version:	5.12.3
+Version:	5.12.10
 Release:	1
-License:	LGPL v3 or GPL v2+ or commercial
+License:	LGPL v3 or GPL v2 or GPL v3 or commercial
 Group:		X11/Libraries
 Source0:	http://download.qt.io/official_releases/qt/5.12/%{version}/submodules/%{orgname}-everywhere-src-%{version}.tar.xz
-# Source0-md5:	07afd695b3c1126f721c77c1c0ac784f
-URL:		http://www.qt.io/
+# Source0-md5:	1131cb361083357498d262dc11a4ef1a
+URL:		https://www.qt.io/
 BuildRequires:	Qt5Core-devel >= %{qtbase_ver}
 BuildRequires:	Qt5Gui-devel >= %{qtbase_ver}
+BuildRequires:	Qt5Network-devel >= %{qtbase_ver}
 BuildRequires:	Qt5OpenGL-devel >= %{qtbase_ver}
 BuildRequires:	Qt5OpenGLExtensions-devel >= %{qtbase_ver}
 BuildRequires:	Qt5Qml-devel >= %{qtdeclarative_ver}
@@ -28,7 +29,7 @@ BuildRequires:	qt5-assistant >= %{qttools_ver}
 %endif
 BuildRequires:	qt5-build >= %{qtbase_ver}
 BuildRequires:	qt5-qmake >= %{qtbase_ver}
-BuildRequires:	rpmbuild(macros) >= 1.654
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -74,9 +75,7 @@ Summary:	Qt5 Canvas 3D documentation in HTML format
 Summary(pl.UTF-8):	Dokumentacja do modułu Qt5 Canvas 3D w formacie HTML
 Group:		Documentation
 Requires:	qt5-doc-common >= %{qtbase_ver}
-%if "%{_rpmversion}" >= "5"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description doc
 Qt5 Canvas 3D documentation in HTML format.
@@ -89,9 +88,7 @@ Summary:	Qt5 Canvas 3D documentation in QCH format
 Summary(pl.UTF-8):	Dokumentacja do modułu Qt5 Canvas 3D w formacie QCH
 Group:		Documentation
 Requires:	qt5-doc-common >= %{qtbase_ver}
-%if "%{_rpmversion}" >= "5"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description doc-qch
 Qt5 Canvas 3D documentation in QCH format.
@@ -103,9 +100,7 @@ Dokumentacja do modułu Qt5 Canvas 3D w formacie QCH.
 Summary:	Qt5 Canvas 3D examples
 Summary(pl.UTF-8):	Przykłady do modułu Qt5 Canvas 3D
 Group:		X11/Development/Libraries
-%if "%{_rpmversion}" >= "5"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description examples
 Qt5 Canvas 3D examples.
@@ -123,6 +118,7 @@ qmake-qt5
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	INSTALL_ROOT=$RPM_BUILD_ROOT
 

@@ -10,7 +10,7 @@ Summary:	The Qt5 Canvas 3D module
 Summary(pl.UTF-8):	Moduł Qt5 Canvas 3D
 Name:		qt5-%{orgname}
 Version:	5.12.10
-Release:	1
+Release:	2
 License:	LGPL v3 or GPL v2 or GPL v3 or commercial
 Group:		X11/Libraries
 Source0:	http://download.qt.io/official_releases/qt/5.12/%{version}/submodules/%{orgname}-everywhere-src-%{version}.tar.xz
